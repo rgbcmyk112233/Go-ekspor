@@ -12,7 +12,8 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <a href="/" className="nav-logo">
-          Go Ekspor
+          <img src="/vite.svg" alt="Go Ekspor Logo" className="logo-image" />
+          <span className="logo-text">Go Ekspor</span>
         </a>
 
         <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
@@ -40,5 +41,4 @@ const Navbar = () => {
   );
 };
 
-// PASTIKAN ADA EXPORT DEFAULT
 export default Navbar;

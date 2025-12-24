@@ -18,10 +18,31 @@
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover .logo-image {
+  transform: scale(1.1);
+}
+
+.logo-text {
   font-size: 1.5rem;
   font-weight: bold;
   color: #2563eb;
-  text-decoration: none;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-menu {
@@ -34,11 +55,28 @@
   color: #333;
   text-decoration: none;
   font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
   transition: color 0.3s;
 }
 
 .nav-link:hover {
   color: #2563eb;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #2563eb;
+  transition: width 0.3s;
+}
+
+.nav-link:hover:after {
+  width: 100%;
 }
 
 .nav-toggle {
@@ -67,13 +105,39 @@
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     padding: 2rem 0;
+    gap: 1.5rem;
   }
 
   .nav-menu.active {
     left: 0;
   }
 
+  .nav-link {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .nav-link:hover:after {
+    width: 50%;
+    left: 25%;
+  }
+
   .nav-toggle {
     display: flex;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-image {
+    width: 35px;
+    height: 35px;
   }
 }
